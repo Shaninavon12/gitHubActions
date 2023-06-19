@@ -3,7 +3,26 @@
 name: Manual workflow
 on: push
 jobs:
-  shani:
-    runs-on: ubuntu-latest
-    steps:
-      - run: npm start
+    run-action:
+      name: Run action
+      runs-on: ubuntu-latest
+  
+      steps:
+        - uses: actions/checkout@v2
+  
+        - name: Use Node.js 16.x
+          uses: actions/setup-node@v2
+          with:
+            node-version: 16.x
+            cache: 'npm'
+            cache-dependency-path: package-lock.json
+  
+        - name: compile
+          run: tsc
+  
+        - name: Build
+          run: node dist/wellcomePage.js
+  
+        - name: Run my action
+          uses: ./
+
