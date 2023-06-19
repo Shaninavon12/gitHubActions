@@ -1,9 +1,9 @@
 # This is a basic workflow that is manually triggered
 
 name: Manual workflow
-on: [push]
+on: push
 jobs:
   shani:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello shani"
+      - run: npm start
