@@ -10,10 +10,11 @@ jobs:
       steps:
   
         - name: compile
-          run: tsc ./src/wellcomePage.ts
+          run: tsc src/wellcomePage.ts
   
         - name: Build
           run: node dist/wellcomePage.js
   
         - name: Run my action
           uses: ./
+        
