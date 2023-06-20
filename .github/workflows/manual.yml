@@ -1,7 +1,10 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
-on: push
+name: check build after commit on 'main'
+on: 
+  push:
+    branches:
+      - main
 jobs:
     run-action:
       name: Run action
@@ -12,7 +15,7 @@ jobs:
               uses: actions/setup-dotnet@v3
               with:
                 dotnet-version: '6.0.x'
-            - name: Install dependencies
+            - name: compilation 
               run: tsc
             - name: Build
               run: npm start
