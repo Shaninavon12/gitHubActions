@@ -6,15 +6,13 @@ jobs:
     run-action:
       name: Run action
       runs-on: ubuntu-latest
-  
       steps:
-  
-        - name: compile
-          run: tsc src/wellcomePage.ts
-  
-        - name: Build
-          run: node dist/wellcomePage.js
-  
-        - name: Run my action
-          uses: ./
-        
+            - uses: actions/checkout@v3
+            - name: Setup dotnet
+              uses: actions/setup-dotnet@v3
+              with:
+                dotnet-version: '6.0.x'
+            - name: Install dependencies
+              run: dotnet tsc
+            - name: Build
+              run: dotnet start
