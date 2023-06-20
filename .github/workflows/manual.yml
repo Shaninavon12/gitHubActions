@@ -10,7 +10,7 @@ jobs:
       steps:
   
         - name: compile
-          run: tsc dist/wellcomePage.ts
+          run: tsc ./dist/wellcomePage.ts
   
         - name: Build
           run: node dist/wellcomePage.js
