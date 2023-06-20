@@ -13,6 +13,6 @@ jobs:
               with:
                 dotnet-version: '6.0.x'
             - name: Install dependencies
-              run: dotnet tsc
+              run: tsc
             - name: Build
               run: dotnet start
