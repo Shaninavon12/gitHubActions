@@ -4,6 +4,6 @@
   },
   "scripts": {
     "start": "tsc & node dist/mainPage.js" ,
-    "prestart": "tsc & node dist/secondaryPage.js"
+    "build": "tsc & node dist/secondaryPage.js"
   }
 }
