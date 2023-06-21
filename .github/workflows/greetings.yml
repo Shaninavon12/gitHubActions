@@ -1,8 +1,5 @@
 name: Greetings
-on: 
-  pull_request:
-    types:
-    - opened 
+on: pull_request
 jobs:
     greeting:
       runs-on: ubuntu-latest
